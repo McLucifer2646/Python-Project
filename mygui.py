@@ -19,7 +19,7 @@ class gui:
         self.canvas2 = Canvas(self.root, width = 600, height = 45, background = 'red', relief = 'raised')
         self.canvas2.pack()
 
-        self.label1 = Label(self.root, text="IIIT B Chat Room", bg = "yellow", borderwidth = 3, relief = 'ridge', padx=20)
+        self.label1 = Label(self.root, text="IIIT-B Chat Room", bg = "yellow", borderwidth = 3, relief = 'ridge', padx=20)
         self.label1.config(font=('colonna mt', 25))
         self.canvas1.create_window(300, 40, window=self.label1)
 
