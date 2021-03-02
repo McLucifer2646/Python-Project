@@ -2,24 +2,22 @@ from tkinter import *
 import HELP1
 import chat_room
 from time import strftime
-from datetime import date
 
 class gui:
     
     def __init__(self):
         self.root= Tk()
-        self.root.geometry("600x410")
-        self.root.maxsize(600, 410)
-        self.root.minsize(600, 410)
+        self.root.geometry("600x385")
+        self.root.maxsize(600, 385)
+        self.root.minsize(600, 385)
 
         namevalue = StringVar()
         hcodevalue = StringVar()
         Gcodevalue = StringVar()
 
         def clock():
-            tme = strftime('%H:%M %p')
-            today=date.today()
-            label.config(text=tme+"\n"+str(today.day)+"-"+str(today.month)+"-"+str(today.year)) 
+            tme = strftime("%A, %d-%m-%Y\t\t\t\t\t\t     %H:%M %p")
+            label.config(text=tme) 
             label.after(1000, clock) 
 
         label = Label(self.root,width=600, font = ('calibri', 12, 'bold'),background='red',foreground = 'white',anchor='ne')
