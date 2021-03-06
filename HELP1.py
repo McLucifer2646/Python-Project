@@ -1,22 +1,38 @@
-#import tkinter as tk
-from tkinter import *
+import tkinter as tk
+from time import strftime
 
-def GUI1(Frame):    
-    Frame.geometry("600x360")
-    Frame.maxsize(600, 360)
-    Frame.minsize(600, 360)
-    canvas2 = Canvas(Frame, width = 600, height = 360, background = 'light grey', relief = 'raised')
-    canvas2.pack()
-    #label = tk.Label(Frame, text="About Create Room", bg = 'blue', fg ='white', borderwidth = 6, relief = 'sunken')
-    #label.pack(padx=20, pady=20)
-    title2 = Label(Frame, text=' HELP!! ', borderwidth = 4, relief = 'raised')
-    title2.config(font=('helvetica', 10))
-    canvas2.create_window(300, 25, window=title2)
-    return
 
-if __name__ == "__main__":
-    h = Tk()
-    GUI1(h)
-    h.mainloop()
-
+def GUI1(Frame):
     
+   
+    Frame.geometry("733x434")
+    Frame.maxsize(733,434)
+    Frame.minsize(733,434)
+    Frame.title("***HELP***")
+
+    def clock():
+        tme = strftime("%A, %d-%m-%Y\t\t\t\t\t\t\t\t     %H:%M %p")
+        label.config(text=tme) 
+        label.after(1000, clock) 
+
+    label = tk.Label(Frame,width=600, font = ('calibri', 12, 'bold'),background='red',foreground = 'white',anchor='ne')
+    label.pack()
+    clock()
+
+
+    canvash = tk.Canvas(Frame,width=733,height=434,background="cyan")
+    canvash.pack()
+    label1 = tk.Label(Frame,text="About createroom!",font="comicsansms",bg="blue",fg="white",padx=250,pady=6,borderwidth=6,relief='ridge')
+    label1.pack(fill='x',padx=200,pady=100)
+    canvash.create_window(360,120,window = label1)
+    label2 = tk.Label(Frame,text="About join room!",font = "comicsansms",bg="blue",fg="white",padx=250,pady=6,borderwidth=6,relief='ridge')
+    label2.pack(fill='x',padx=200)
+    canvash.create_window(360,240,window = label2)
+    return
+    
+if __name__ == "__main__":
+    hsc = tk.Tk()
+    GUI1(hsc)
+    hsc.mainloop()
+
+
