@@ -150,14 +150,14 @@ class Gui:
 		self.button2 = tk.Button(self.canvas1f2, text='Join Room', bg='brown', fg='white', font=('helvetica', 9, 'bold'), command = self.join)
 		self.canvas1f2.create_window(345, 150, window=self.button2)
 		#		----Room Junction Ends----
-
+		#       ----The Emoji s which are defined ----
 		def emoji():
-			a=tk.Toplevel(width=350,height=200)
+			a=tk.Toplevel(width=350,height=200)#Pop ups another window when emoji button is pressed
 			canvas_e0=tk.Canvas(a,width=350,height=200,background='white')
 			a.maxsize(350,200)
 			a.minsize(350,200)
 			canvas_e0.pack()
-			def e1():
+			def e1():#Definition of each emojis with their corresponding hexadecimal equivalent
 				self.m.insert(600,'\U0001f600')
 				return
 			def e2():
@@ -277,7 +277,7 @@ class Gui:
 			def e40():
 				self.m.insert(600,'\U0001f47F')
 				return
-
+			#          ----Definition of buttons for the emojis----
 			self.b1=tk.Button(canvas_e0,text="\U0001f600", bg='white',fg='black',font=10,command=e1)
 			self.b2=tk.Button(canvas_e0,text="\U0001f4AF", bg='white',fg='black',font=10,command=e2)
 			self.b3=tk.Button(canvas_e0,text="\U0001f604", bg='white',fg='black',font=10,command=e3)
@@ -320,6 +320,7 @@ class Gui:
 			self.b38=tk.Button(canvas_e0,text='\U0001f621',bg='white',fg='black',font=10,command=e38)
 			self.b39=tk.Button(canvas_e0,text='\U0001f480',bg='white',fg='black',font=10,command=e39)
 			self.b40=tk.Button(canvas_e0,text='\U0001f47F',bg='white',fg='black',font=10,command=e40)
+			#          ----setting up of an emoji keyboard----
 			self.b1.grid(column=0,row=0)
 			self.b2.grid(column=1,row=0)
 			self.b3.grid(column=2,row=0)
@@ -360,7 +361,7 @@ class Gui:
 			self.b38.grid(column=5,row=4)
 			self.b39.grid(column=6,row=4)
 			self.b40.grid(column=7,row=4)
-		
+		#       ----Emoji part ends----
 		#		----Welcome Screen Begins----
 		# 		frame0 holds the Welcome screen window		
 		self.frame0 = tk.Frame(self.window)
