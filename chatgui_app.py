@@ -6,29 +6,28 @@ from time import strftime
 
 class Gui:
 	def __init__(self):
+
+		#Base screen Setup
 		self.window = tk.Tk()
 		self.window.geometry("600x385")
 		self.window.maxsize(600, 385)
 		self.window.minsize(600, 385)
 		self.window.title('  Chat_Room')
 
+		#To change the base tKinter logo to desired logo
 		self.p1 = tk.PhotoImage(file = 'python_logo.png')
 		self.window.iconphoto(False, self.p1)
 		
 		self.count = 1
-		self.True_msg = []
-
-		self.msg_x = 10
-		self.msg_y = 10
-		self.msg_send_x = 400
+		#self.msg_x = 10
+		#self.msg_y = 10
+		#self.msg_send_x = 400
 
 		self.window.rowconfigure(0,weight= 1)
 		self.window.columnconfigure(0,weight =1)
 
-		'''self.frame12 = tk.LabelFrame(self.window)
-		self.frame12.grid(row = 0,column =0,sticky ='nsew',pady= 40)'''
-			
-
+		#		----Chatting Interface begins----
+		#		frame1 holds Chatting Interface
 		self.frame1 = tk.Frame(self.window)
 		self.frame1.grid(row =0,column =0,sticky ='nsew')
 
@@ -39,54 +38,44 @@ class Gui:
 			
 		label = tk.Label(self.frame1, width=600, font = ('calibri', 12, 'bold'),background='blue',foreground = 'white',anchor='ne')
 		label.pack()
-		clock()
-
-
-		self.frame12 = tk.LabelFrame(self.window,bg = 'cyan')
-		self.frame12.grid(row = 0,column =0,sticky ='ew')
-		
+		clock()		
 
 		self.canvas1f1 = tk.Canvas(self.frame1, width = 600, height = 315, background = 'cyan', relief = 'raised')
 		
 		self.lbx = tk.Listbox(self.canvas1f1,bg = "white" , fg = "black", height = 18 , width = 96)
 		
+		#Vertical Scrollbar
 		self.scrollbar1 =tk.Scrollbar(self.canvas1f1)
 		self.scrollbar1.pack(side ='right',fill = 'y')
 		self.lbx.config(yscrollcommand = self.scrollbar1.set)
 		self.scrollbar1.config(command = self.lbx.yview)
 
+		#Horizontal Scrollbar
 		self.scrollbar1 =tk.Scrollbar(self.canvas1f1, orient = 'horizontal')
 		self.scrollbar1.pack(side ='bottom',fill = 'x')
 		self.lbx.config(xscrollcommand = self.scrollbar1.set)
 		self.scrollbar1.config(command = self.lbx.xview)
 
-		#self.scrollbar2 =tk. Scrollbar(self.canvas1f1,orient = 'horizontal')
-		#self.scrollbar1.pack(side ='right',fill = 'y')
-		#self.scrollbar2.grid(sticky = "s")
-		#self.lbx.config(xscrollcommand = self.scrollbar2.set)
-		#self.scrollbar2.config(command = self.lbx.xview)
-
-
 		self.lbx.pack()
 		self.lbx.insert(0, "                               **************************START OF THE CHAT*******************************")
-		
-
 
 		self.canvas1f1.pack()
 		self.canvas2f1 = tk.Canvas(self.frame1, width = 600, height = 46, background = 'blue', relief = 'raised')
 		self.canvas2f1.pack()
 
 		self.m  = tk.Entry(self.frame1)
-
 		self.canvas2f1.create_window(320, 25, width = 400, height = 20, window=self.m)
 
 		self.button4 = tk.Button(self.frame1, text='Send',bg='light grey', fg='black',font=('helvetica', 9, 'bold'), command = self.send)
 		self.canvas2f1.create_window(570, 25, window=self.button4)
 
+		#		----Chatting Interface Ends----
+
+		#		----Help Window Begins----
+		#		frame3 holds Help window
 		self.frame3 = tk.Frame(self.window)
 		self.frame3.grid(row =0,column =0,sticky ='nsew')
 		
-		#Help window
 		def clock0():
 			tme = strftime("%A, %d-%m-%Y\t\t\t\t\t\t\t     %I:%M %p")
 			label0.config(text=tme)
@@ -109,6 +98,7 @@ class Gui:
 		word2 = " You will be taken to an interface where you have to enter a unique code\n to either create a room or join one, press the corresponding button to proceed."
 		word3 = " This forwards you to the chatting interface where you can enjoy you chatting experience..."
 		word4 = " Click on the BACK button in lower right corner to return to the main screen..."
+
 		self.title6 = tk.Label(self.frame3, text = word, bg = 'yellow', borderwidth = 4, relief = 'ridge')
 		self.title6.config(font=('helvetica', 11, 'bold'))
 		self.canvas1f3.create_window(300, 70, window=self.title6)
@@ -128,12 +118,10 @@ class Gui:
 		self.title6 = tk.Label(self.frame3, text = word4, borderwidth = 4, relief = 'ridge')
 		self.title6.config(font=('helvetica', 11))
 		self.canvas1f3.create_window(300, 250, window=self.title6)
+		#		----Help Window Ends----
 
-
-
-
-
-
+		#		----Room Junction Begins----
+		#		frame2 holds Room Junction window
 		self.frame2 = tk.Frame(self.window)
 		self.frame2.grid(row =0,column = 0,sticky ='nsew')
 		def clock1():
@@ -161,18 +149,7 @@ class Gui:
 		self.canvas1f2.create_window(255, 150, window=self.button1)
 		self.button2 = tk.Button(self.canvas1f2, text='Join Room', bg='brown', fg='white', font=('helvetica', 9, 'bold'), command = self.join)
 		self.canvas1f2.create_window(345, 150, window=self.button2)
-
-
-		self.frame0 = tk.Frame(self.window)
-		self.frame0.grid(row = 0,column =0,sticky= 'nsew')
-		def clock2():
-			tme = strftime("%A, %d-%m-%Y\t\t\t\t\t\t\t     %I:%M %p")
-			label2.config(text=tme)
-			label2.after(ms=1000,func=clock2)
-	
-		label2 = tk.Label(self.frame0, width=600, font = ('calibri', 12, 'bold'),background='red',foreground = 'white',anchor='ne')
-		label2.pack()
-		clock2()		
+		#		----Room Junction Ends----
 
 		def emoji():
 			a=tk.Toplevel(width=350,height=200)
@@ -301,7 +278,6 @@ class Gui:
 				self.m.insert(600,'\U0001f47F')
 				return
 
-
 			self.b1=tk.Button(canvas_e0,text="\U0001f600", bg='white',fg='black',font=10,command=e1)
 			self.b2=tk.Button(canvas_e0,text="\U0001f4AF", bg='white',fg='black',font=10,command=e2)
 			self.b3=tk.Button(canvas_e0,text="\U0001f604", bg='white',fg='black',font=10,command=e3)
@@ -384,6 +360,20 @@ class Gui:
 			self.b38.grid(column=5,row=4)
 			self.b39.grid(column=6,row=4)
 			self.b40.grid(column=7,row=4)
+		
+		#		----Welcome Screen Begins----
+		# 		frame0 holds the Welcome screen window		
+		self.frame0 = tk.Frame(self.window)
+		self.frame0.grid(row = 0,column =0,sticky= 'nsew')
+		def clock2():
+			tme = strftime("%A, %d-%m-%Y\t\t\t\t\t\t\t     %I:%M %p")
+			label2.config(text=tme)
+			label2.after(ms=1000,func=clock2)
+	
+		label2 = tk.Label(self.frame0, width=600, font = ('calibri', 12, 'bold'),background='red',foreground = 'white',anchor='ne')
+		label2.pack()
+		clock2()
+
 		self.canvas1f0 = tk.Canvas(self.frame0, width = 600, height = 315, background = 'orange', relief = 'raised')
 		self.canvas1f0.pack()
 		self.canvas2f0 = tk.Canvas(self.frame0 , width = 600, height = 45, background = 'red', relief = 'raised')
@@ -408,7 +398,9 @@ class Gui:
 
 		self.button3 = tk.Button(self.frame0, text='Help',bg='light grey', fg='black',font=('helvetica', 9, 'bold'), command = self.call_help1)
 		self.canvas2f0.create_window(570, 20, window=self.button3)
+		#		----Welcome Screen Ends----
 
+		#from client.py Client() class object creation
 		self.client = client.Client()
 
 		
@@ -473,7 +465,6 @@ class Gui:
 
 	def main_loop(self):
 		self.window.mainloop()
-
 
 
 	def make_threads(self):
