@@ -32,7 +32,7 @@ class Gui:
 		self.frame1.grid(row =0,column =0,sticky ='nsew')
 
 		def clock():
-			tme = strftime("%A, %d-%m-%Y\t\t\t\t\t\t\t     %I:%M %p")
+			tme = strftime("%A, %d-%m-%Y\t\t\t\t\t\t     %I:%M %p")
 			label.config(text=tme)
 			label.after(ms=1000,func=clock)
 			
@@ -77,7 +77,7 @@ class Gui:
 		self.frame3.grid(row =0,column =0,sticky ='nsew')
 		
 		def clock0():
-			tme = strftime("%A, %d-%m-%Y\t\t\t\t\t\t\t     %I:%M %p")
+			tme = strftime("%A, %d-%m-%Y\t\t\t\t\t\t     %I:%M %p")
 			label0.config(text=tme)
 			label0.after(ms=1000,func=clock0)
 		label0 = tk.Label(self.frame3, width=600, font = ('calibri', 12, 'bold'),background='green',foreground = 'white',anchor='ne')
@@ -125,7 +125,7 @@ class Gui:
 		self.frame2 = tk.Frame(self.window)
 		self.frame2.grid(row =0,column = 0,sticky ='nsew')
 		def clock1():
-			tme = strftime("%A, %d-%m-%Y\t\t\t\t\t\t\t     %I:%M %p")
+			tme = strftime("%A, %d-%m-%Y\t\t\t\t\t\t     %I:%M %p")
 			label1.config(text=tme)
 			label1.after(ms=1000,func=clock1)
 		
@@ -367,7 +367,7 @@ class Gui:
 		self.frame0 = tk.Frame(self.window)
 		self.frame0.grid(row = 0,column =0,sticky= 'nsew')
 		def clock2():
-			tme = strftime("%A, %d-%m-%Y\t\t\t\t\t\t\t     %I:%M %p")
+			tme = strftime("%A, %d-%m-%Y\t\t\t\t\t\t     %I:%M %p")
 			label2.config(text=tme)
 			label2.after(ms=1000,func=clock2)
 	
