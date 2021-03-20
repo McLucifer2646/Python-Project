@@ -1,9 +1,10 @@
 # chat_app
 
-simple chat app based on unique room codes
-users can create room or join room and can start chatting with each other
+Simple chat app based on unique room codes.
+Users can create room or join room and can start chatting with each other.
 
-Launch the chat_app.py after changing the ip address and port number mentioned in client.py
+Launch the chat_app.py after changing the ip address and port number mentioned in client.py.
+The server ip has to be updated in client.py.
 
 Enter user name and click Submit.
 Click Help button, if you are new to this application
