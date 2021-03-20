@@ -96,7 +96,7 @@ class Gui:
 		word = "  ***To start chatting***  "
 		word1 = " Please enter the username you wish to display and click on SUBMIT..."
 		word2 = " You will be taken to an interface where you have to enter a unique code\n to either create a room or join one, press the corresponding button to proceed."
-		word3 = " This forwards you to the chatting interface where you can enjoy you chatting experience..."
+		word3 = " This forwards you to the chatting interface where you can enjoy your chatting experience..."
 		word4 = " Click on the BACK button in lower right corner to return to the main screen..."
 
 		self.title6 = tk.Label(self.frame3, text = word, bg = 'yellow', borderwidth = 4, relief = 'ridge')
