@@ -7,7 +7,7 @@ Users can create room or join room and can start chatting with each other.
 
 -------------------------------------------------------------------------------------
 
-Make sure that there is an active server to start chatting.
+Make sure that there is an active server to start chatting...
 
 Launch the chat_app.py after changing the ip address and port number mentioned in client.py.
 The server ip has to be updated in client.py.
